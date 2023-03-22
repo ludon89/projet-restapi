@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colors', function (Blueprint $table) {
+        Schema::create('attributes', function (Blueprint $table) {
             $table->id();
-            $table->string("colorname");
-            $table->foreignId("hearingaid_id");
+            $table->string("color");
+            $table->smallInteger("antennas");
             $table->timestamps();
+            $table->foreignId("hearing_aid_id")->constrained()->cascadeOnDelete();
         });
     }
 

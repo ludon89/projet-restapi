@@ -20,7 +20,6 @@ class HearingAidFactory extends Factory
             "name" => fake()->words(2, true),
             "refnumber" => fake()->numberBetween(1000, 9999),
             "price" => fake()->numberBetween(1000, 2000),
-            "color_id" => fake()->numberBetween(1, 5),
         ];
     }
 }

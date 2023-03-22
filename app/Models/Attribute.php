@@ -18,10 +18,11 @@ class Color extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'colorname',
+        'color',
+        'antennas',
     ];
 
-    public function hearing_aid(): BelongsTo
+    public function hearingAid(): BelongsTo
     {
         return $this->belongsTo(HearingAid::class);
     }

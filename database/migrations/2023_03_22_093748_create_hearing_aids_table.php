@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer("refnumber");
             $table->integer("price");
             $table->timestamps();
-            $table->foreignId("color_id");
         });
     }
 

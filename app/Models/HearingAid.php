@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Attribute;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class HearingAid extends Model
 {
@@ -24,8 +25,8 @@ class HearingAid extends Model
         'color_id',
     ];
 
-    public function color(): HasOne
+    public function attributes(): HasMany
     {
-        return $this->hasOne(Color::class);
+        return $this->hasMany(Attribute::class);
     }
 }
