@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\API\HearingAidController;
-use App\Models\HearingAid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::apiResource("hearingaids", HearingAidController::class);
+
+// Route::get('/hearingaids/{id}', [HearingAidController::class, "show"]);
+
+
+
+
+/////////////////// TEST ///////////////////
+
+Route::get("test", function () {
+    return "test";
+});
+
+/////////////////// UNUSED ///////////////////
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::apiResource('hearingaids', HearingAidController::class);
-
-
