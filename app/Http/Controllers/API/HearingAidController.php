@@ -24,7 +24,7 @@ class HearingAidController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return HearingAid::create($request->all());
     }
 
     /**
@@ -32,7 +32,7 @@ class HearingAidController extends Controller
      */
     public function show($id)
     {
-        return response()->json(HearingAid::find($id));
+        return response()->json(HearingAid::findOrFail($id));
     }
 
     /**
