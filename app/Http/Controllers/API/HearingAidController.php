@@ -14,6 +14,9 @@ class HearingAidController extends Controller
     public function index()
     {
         //
+        $hearingAids = HearingAid::all();
+
+        return response()->json($hearingAids);
     }
 
     /**
