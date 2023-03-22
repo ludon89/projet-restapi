@@ -5,18 +5,19 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\HearingAid;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 
 class HearingAidController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index():Collection
     {
         //
-        $hearingAids = HearingAid::all();
+       // $hearingAids = HearingAid::all();
 
-        return response()->json($hearingAids);
+        return HearingAid::all();
     }
 
     /**
@@ -38,9 +39,12 @@ class HearingAidController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, HearingAid $hearingAid)
+    public function update(Request $request, $id)
     {
         //
+        $hearingAid = HearingAid::find($id);
+        $hearingAid->update($request->all());
+        return $hearingAid;
     }
 
     /**
