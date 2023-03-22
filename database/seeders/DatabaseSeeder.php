@@ -19,4 +19,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
     }
+
+    public function run(): void
+    {
+
+        \App\Models\ColorFactory::factory(5)->create();
+    }
 }
