@@ -46,8 +46,12 @@ class HearingAidController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HearingAid $hearingAid)
+    public function destroy($id)
     {
-        //
+        $id = HearingAid::findOrFail($id);
+
+        $id->delete();
+
+        return response()->json();
     }
 }
