@@ -13,16 +13,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\HearingAid::factory(10)->create();
+        // \App\Models\ColorFactory::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-    }
-
-    public function run(): void
-    {
-
-        \App\Models\ColorFactory::factory(5)->create();
     }
 }
