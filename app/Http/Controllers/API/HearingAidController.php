@@ -30,7 +30,7 @@ class HearingAidController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(HearingAid $id)
+    public function show($id)
     {
         return response()->json(HearingAid::find($id));
     }
