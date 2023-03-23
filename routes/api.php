@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource("hearingaids", HearingAidController::class);
 
-// Route::get('/hearingaids/{id}', [HearingAidController::class, "show"]);
-
-
 
 
 /////////////////// TEST ///////////////////

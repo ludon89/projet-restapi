@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("sonotonix", function () {
+    return view("sonotonix");
+});
+
+
+
+
+///////////////////  ///////////////////
+
 Route::get('/', function () {
     return view('welcome');
 });
