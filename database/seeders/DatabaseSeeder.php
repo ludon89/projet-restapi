@@ -14,9 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            HearingAidSeeder::class,
+            AttributeSeeder::class
+        ]);
 
-        $this->call([HearingAidSeeder::class]);
-        // \App\Models\ColorFactory::factory(5)->create();
+        // HearingAid::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

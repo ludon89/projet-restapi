@@ -19,6 +19,7 @@ class HearingAidFactory extends Factory
         return [
             "name" => fake()->words(2, true),
             "refnumber" => fake()->numberBetween(1000, 9999),
+            "description" => fake()->paragraph(),
             "price" => fake()->numberBetween(1000, 2000),
         ];
     }

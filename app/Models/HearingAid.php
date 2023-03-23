@@ -22,7 +22,7 @@ class HearingAid extends Model
         'name',
         'refnumber',
         'price',
-        'color_id',
+        'description',
     ];
 
     public function attributes(): HasMany

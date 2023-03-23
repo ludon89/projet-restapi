@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Color extends Model
+class Attribute extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -20,6 +20,7 @@ class Color extends Model
     protected $fillable = [
         'color',
         'antennas',
+        'hearing_aid_id'
     ];
 
     public function hearingAid(): BelongsTo

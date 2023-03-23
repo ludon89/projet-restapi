@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("color");
             $table->smallInteger("antennas");
             $table->timestamps();
-            $table->foreignId("hearing_aid_id")->constrained()->cascadeOnDelete();
+            $table->foreignId("hearing_aid_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
