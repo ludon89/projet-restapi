@@ -19,8 +19,6 @@ class DatabaseSeeder extends Seeder
             AttributeSeeder::class
         ]);
 
-        // HearingAid::factory(10)->create();
-
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

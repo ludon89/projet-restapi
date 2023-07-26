@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\HearingAid;
-use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -13,11 +12,11 @@ class HearingAidController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(HearingAid $dataWithColor)
+    public function index(): Collection
     {
-        $dataWithColor = HearingAid::with('attributes')->get();
+        $dataWithAttributes = HearingAid::with('attributes')->get();
 
-        return response()->json($dataWithColor);
+        return $dataWithAttributes;
     }
 
     /**

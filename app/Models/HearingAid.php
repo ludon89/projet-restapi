@@ -6,8 +6,8 @@ use App\Models\Attribute;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class HearingAid extends Model
 {
@@ -25,8 +25,8 @@ class HearingAid extends Model
         'description',
     ];
 
-    public function attributes(): HasMany
+    public function attributes(): HasOne
     {
-        return $this->hasMany(Attribute::class, 'hearing_aid_id');
+        return $this->hasOne(Attribute::class, 'hearing_aid_id');
     }
 }

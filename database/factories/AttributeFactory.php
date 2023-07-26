@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +20,7 @@ class AttributeFactory extends Factory
         return [
             "color" => fake()->colorName(),
             "antennas" => fake()->numberBetween(1, 4),
-            "hearing_aid_id" => fake()->randomDigitNotNull(),
+            "hearing_aid_id" => User::factory(),
         ];
     }
 }
