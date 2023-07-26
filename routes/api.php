@@ -17,12 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource("hearingaids", HearingAidController::class);
 
+// Route::get('/hearingaids', [HearingAidController::class, 'index'])
+//     ->name('hearingaids.index');
 
+// Route::get('/hearingaids/{hearingaid}', [HearingAidController::class, 'show'])
+//     ->name('hearingaids.show');
 
 /////////////////// TEST ///////////////////
 
-Route::get("test", function () {
-    return "test";
+Route::get('/hello', function () {
+    return "Hello World!";
 });
 
 /////////////////// UNUSED ///////////////////
@@ -30,5 +34,3 @@ Route::get("test", function () {
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::apiResource('hearingaids', HearingAidController::class);

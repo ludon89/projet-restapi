@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\HearingAid;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Attribute extends Model
 {
@@ -25,6 +26,6 @@ class Attribute extends Model
 
     public function hearingAid(): BelongsTo
     {
-        return $this->belongsTo(HearingAid::class);
+        return $this->belongsTo(HearingAid::class, 'hearing_aid_id');
     }
 }

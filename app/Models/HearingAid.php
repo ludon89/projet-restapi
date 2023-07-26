@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Attribute;
+use App\Models\Attribute;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -27,6 +27,6 @@ class HearingAid extends Model
 
     public function attributes(): HasMany
     {
-        return $this->hasMany(Attribute::class);
+        return $this->hasMany(Attribute::class, 'hearing_aid_id');
     }
 }
