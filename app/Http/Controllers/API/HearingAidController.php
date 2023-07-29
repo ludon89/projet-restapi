@@ -32,7 +32,9 @@ class HearingAidController extends Controller
      */
     public function show($id)
     {
-        return response()->json(HearingAid::findOrFail($id));
+        $dataWithAttributes = HearingAid::with('attributes')->find($id);
+
+        return $dataWithAttributes;
     }
 
     /**
@@ -40,7 +42,6 @@ class HearingAidController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $hearingAid = HearingAid::find($id);
         $hearingAid->update($request->all());
         return $hearingAid;
